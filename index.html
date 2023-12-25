@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html  class="scroll-smooth" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link class="h-64 w-auto" rel="icon" href="assets/images/ata-removebg-preview.png"  type="image/x-icon" />
+    <title>Shoenique</title>
+</head>
+<body >
+                                  <!-- Nav bar starts -->
+<header id="HOME" class="sticky top-0 bg-white z-50">
+  <div>
+    <div style="transition: 0.3s linear ;" class="  flex justify-between mt-[8%] p-3  md:flex md:p-5 md:mt-[2%] md:ml-[6%] md:mr-[6%] ">
+        <div class="font-serif flex justify-center items-center ">
+            <button><img style="transition: 0.3s linear ;" class="h-12 w-12 md:hover:h-24 md:hover:w-24" src="assets/images/ata-removebg-preview.png" alt="logo"></button>
+            <a  style="transition: 0.3s linear ;" class="font-bold text-2xl text-zinc-800 md:hover:text-4xl  transition ease-in-out duration-500" href="index.html">SHOENIQUE</a>
+        </div>
+    <div class="flex flex-row justify-center py-4 px-1">
+      <div id="hamburger" class=" order-1 md:hidden  ">
+        <button class="px-2 py-3 "><img src="assets/icons/hamburger.png" alt="hamburger-menu icon"></button>
+      </div>  
+
+     <div  class="  md:flex md:flex-row md:justify-between md:items-center    ">
+       <button id="srch" class="  order-1 px-2 py-3 md:px-0 md:py-0" ><img   src="assets/icons/search2.png " alt="search icon" ></button>
+       <div id="srchbar" class="hidden  "><input  class="  transition ease-linear duration-1000   p-[0.2rem] rounded-xl border-2 border-[#deae6e] focus:outline-none w-auto mr-[5px]  " type="search" placeholder="Search.."/></div>
+     </div>
+     
+     <div id="carticon" class="md:hidden flex px-2  py-2">
+      <button><img src="assets/icons/cart.png" alt="cart icon"></button>
+      <span id="itemCount1" class="text-[#deae6e] font-semibold" >0</span> <!-- Initial count is 0 -->
+    </div>
+
+    </div>
+  </div>
+
+  <div id="srchbar2" class=" hidden md:hidden transition ease-linear duration-1000  ml-[190px]  md:ml-[6%] md:mr-[6%] py-3">
+    <input  class="  p-[0.2rem] rounded-xl border-2 border-[#deae6e] focus:outline-none w-auto mr-[5px]  " type="search" placeholder="Search.."/>
+  </div>
+
+</div>
+  <div>
+    <div id="navbr" class=" hidden absolute ml-[75%]     rounded-lg bg-gray-300  md:rounded-none md:static md:translate-x-0 md:bg-white md:flex md:flex-row md:justify-between md:p-5 md:ml-[6%] md:mr-[6%] " >
+  
+            <div style="transition: 0.3s linear ;" class="transform transition-transform scale-x-120">
+              <!--class="hidden md:flex" translate-x-72 -->
+                <nav  class=" transition ease-in-out duration-500 md:flex md:flex-row md:justify-between  list-none  ">
+                    <div style="transition: 0.2s linear ;" class="scroll-smooth  transition ease-out duration-500 md:hover:border-b-2 md:hover:border-[#deae6e] md:hover:font-extrabold  md:hover:text-base md:px-2 "><a class="scroll-smooth" href="#start"><li class="px-2 mb-3 mt-2 md:mb-0 md:mt-5  font-bold md:font-semibold  text-[#deae6e] ">HOME </li></a></div>
+                    <div style="transition: 0.2s linear ;" class=" scroll-smooth  transition ease-out duration-500 md:hover:border-b-2 md:hover:border-[#deae6e] md:hover:font-semibold md:hover:text-[#deae6e] md:hover:text-base md:px-2"><a class="scroll-smooth" href="#PRODUCTS"><li class="px-2 mb-3 mt-2 md:mb-0 md:mt-5 ">PRODUCTS</li></a></div>
+                    <div style="transition: 0.2s linear ;" class=" scroll-smooth transition ease-out duration-500 md:hover:border-b-2 md:hover:border-[#deae6e] md:hover:font-semibold md:hover:text-[#deae6e] md:hover:text-base md:px-2"><a class="scroll-smooth" href="#ABOUT-US"><li class="px-2 mb-3 mt-2 md:mb-0 md:mt-5 ">ABOUT</li></a></div>
+                    <div style="transition: 0.2s linear ;" class=" scroll-smooth transition ease-out duration-500 md:hover:border-b-2 md:hover:border-[#deae6e] md:hover:font-semibold md:hover:text-[#deae6e] md:hover:text-base md:px-2"><a class="scroll-smooth" href="#Footer"><li class="px-2 mb-3 mt-2 md:mb-0 md:mt-5 ">CONTACT</li></a></div>
+                </nav>
+            </div> 
+
+          
+            <div id="carticon2" class="hidden md:flex">
+               <button> <img class="w-10 h-auto" src="assets/icons/cart.png" alt="cart icon"></button>
+               <span id="itemCount2" class="text-[#deae6e] font-semibold" >0</span> <!-- Initial count is 0 -->
+            </div>
+
+    </div>
+    <div class="sticky ">
+      <div id="cartmeu" class=" hidden  absolute z-50  ml-[192px]   w-[55%] h-fit md:w-96 md:h-screen overflow-y-auto  bg-gray-300   md:ml-[74.85%] rounded-lg  ">
+          <!--md:flex-->
+          <!-- Empty cart message -->
+        <div class=" flex flex-col justify-between  ">
+              <div class="flex-grow p-4 flex flex-col items-center justify-center bg-gray-300 md:mt-5  md:mr-0  ">
+                <span id="mptycard" class="  font-bold text-xl mb-2 ">CART MENU</span>
+
+              </div>
+              
+            <div id="01shoe" class="hidden flex-row justify-around items-center  mt-1 ">
+                <!-- Flex direction change for mobile -->
+                <div class="flex flex-row justify-around md:justify-between mb-4 md:mb-0">
+                    <div class="h-14 w-14 mt-3 md:mt-0 md:h-20 md:w-20"><img src="assets/images/shoe4.svg" alt=""></div>
+                    <!-- Adjusted image size -->
+                    <div class="flex flex-col  mt-2 md:mt-0 ml-2 md:ml-4 ">
+                        <span class="font-bold text-sm  md:ml-0 md:text-lg"> Nike Air Jordan-01</span>
+                        <!-- Responsive text size -->
+                        <span class="text-xs md:text-sm  md:ml-0 text-gray-500">$200.20</span>
+
+                        <div class="flex items-center mt-1  md:ml-0 w-12 h-5 md:w-14 max-w-xs bg-white rounded-lg shadow-md md:h-7">
+                          <span id="minus1"  class="text-sm font-semibold cursor-pointer user-select-none w-1/3 text-center minus">-</span>
+                          <span id="num1" class="text-sm font-semibold w-1/3 text-center num border-r-2 border-l-2 border-gray-200">01</span>
+                          <span id="plus1" class="text-sm font-semibold cursor-pointer user-select-none w-1/3 text-center plus">+</span>
+                       </div>
+                        
+                    </div>
+                </div>
+                <div id="01delete" class="flex  items-center  md:mr-0">
+                    <button onclick="removeItemFromCart('01shoe')"><img src="./assets/icons/delete-16.png" alt=""></button>
+                </div>
+            </div>
+
+            <div id="10shoe" class="hidden flex-row justify-around  items-center  mt-1">
+              <!-- Flex direction change for mobile -->
+              <div class="flex flex-row justify-around md:justify-between mb-4 md:mb-0">
+                <div class="h-14 w-14 mt-3 md:mt-0 md:h-20 md:w-20"><img src="assets/images/shoe5.svg" alt=""></div>
+                  <!-- Adjusted image size -->
+                  <div class="flex flex-col mt-2 md:mt-0 ml-2 md:ml-4">
+                      <span class="font-bold text-sm  md:ml-0 md:text-lg">Nike Air Jordan-10</span>
+                      <!-- Responsive text size -->
+                      <span class="text-xs md:text-sm  md:ml-0 text-gray-500">$210.20</span>
+                      <div class="flex items-center justify-center mt-1 ml-1 md:ml-0 w-12 h-5 md:w-14 max-w-xs bg-white rounded-lg shadow-md md:h-7">
+                        <span id="minus2" class="text-sm font-semibold cursor-pointer user-select-none w-1/3 text-center minus">-</span>
+                        <span id="num2" class="text-sm font-semibold w-1/3 text-center num border-r-2 border-l-2 border-gray-200">01</span>
+                        <span id="plus2" class="text-sm font-semibold cursor-pointer user-select-none w-1/3 text-center plus">+</span>
+                     </div>
+                  </div>
+              </div>
+              <div id="10delete" class="flex items-center md:mr-0">
+                  <button onclick="removeItemFromCart('10shoe')"><img src="./assets/icons/delete-16.png" alt=""></button>
+              </div>
+          </div>
+          <div id="100shoe" class="hidden flex-row justify-around  items-center  mt-1">
+            <!-- Flex direction change for mobile -->
+            <div class="flex flex-row justify-around md:justify-between mb-4 md:mb-0">
+              <div class="h-14 w-14 mt-3 md:mt-0 md:h-20 md:w-20 md:ml-2 ml-0"><img src="assets/images/shoe6.svg" alt=""></div>
+                <!-- Adjusted image size -->
+                <div class="flex flex-col  mt-2 md:mt-0 ml-2 md:ml-5">
+                    <span class="font-bold text-sm  md:ml-0 md:text-lg">Nike Air Jordan-100</span>
+                    <!-- Responsive text size -->
+                    <span class="text-xs md:text-sm  md:ml-0 text-gray-500">$220.20</span>
+                    <div class="flex items-center justify-center mt-1 ml-1 md:ml-0 w-12 h-5 md:w-14 max-w-xs bg-white rounded-lg shadow-md md:h-7">
+                      <span id="minus3"  class="text-sm font-semibold cursor-pointer user-select-none w-1/3 text-center minus">-</span>
+                      <span id="num3" class="text-sm font-semibold w-1/3 text-center num border-r-2 border-l-2 border-gray-200">01</span>
+                      <span id="plus3" class="text-sm font-semibold cursor-pointer user-select-none w-1/3 text-center plus">+</span>
+                   </div>
+                </div>
+            </div>
+            <div id="100delete" class="flex items-center  md:mr-2">
+                <button onclick="removeItemFromCart('100shoe')"><img src="./assets/icons/delete-16.png" alt=""></button>
+            </div>
+        </div>      
+
+        <div id="200shoe" class=" hidden flex-row justify-around  items-center  mt-1">
+          <!-- Flex direction change for mobile -->
+          <div class="flex flex-row  justify-around md:justify-between mb-4 md:mb-0">
+            <div class="h-14 w-14 mt-3 md:mt-0 md:h-20 md:w-20 md:ml-2 ml-0 "><img src="assets/images/shoe7.svg" alt=""></div>
+              <!-- Adjusted image size -->
+              <div class="flex flex-col mt-2 md:mt-0 ml-2 md:ml-5">
+                  <span class="font-bold text-sm  md:ml-0 md:text-lg">Nike Air Jordan-200</span>
+                  <!-- Responsive text size -->
+                  <span class="text-xs md:text-sm  md:ml-0 text-gray-500">$230.20</span>
+                  <div class="flex items-center justify-center mt-1 ml-1 md:ml-0 w-12 h-5 md:w-14 max-w-xs bg-white rounded-lg shadow-md md:h-7">
+                    <span id="minus4"  class="text-sm font-semibold cursor-pointer user-select-none w-1/3 text-center minus">-</span>
+                    <span id="num4" class="text-sm font-semibold w-1/3 text-center num border-r-2 border-l-2 border-gray-200">01</span>
+                    <span id="plus4" class="text-sm font-semibold cursor-pointer user-select-none w-1/3 text-center plus">+</span>
+                 </div>
+              </div>
+          </div>
+          <div id="200delete" class="flex items-center md:mr-2">
+              <button onclick="removeItemFromCart('200shoe')"><img src="./assets/icons/delete-16.png" alt=""></button>
+          </div>
+      </div>
+
+        <div>
+            <div class="flex md:justify-between justify-between items-center md:mt-[17%] mt-[10%]   ml-[6%] mr-[6%] md:ml-[3%] md:mr-[3%] ">
+              <span class="">Total (0 Item)</span>
+              <span class="font-bold ">$0.00</span>
+            </div>
+            <div class="mb-4 " ><button onclick="placeOrder()" class=" flex md:mb-[75%]  justify-center mt-4 ml-[30%] md:ml-[34%] p-2   md:px-7 md:py-4 text-sm bg-[#deae6e] text-white font-bold rounded-full">Order Now</button> </div>          
+      
+        </div>      <!-- Total and checkout button -->
+
+        </div>
+      </div>  
+    </div>
+
+
+
+
+  </div>
+  
+
+</header>
+
+                                           <!--NAV BAR ENDS  -->
+
+
+                                           <!-- CYAN DIV STARTS-->
+    <div id="start" class="  bg-[#deae6e]  relative  mt-[4%] h-15 w-full flex justify-center items-center md:h-16 md:mt-0 ">
+        <p id="cyandiv1" class="text-center font-medium text-white text-xl md:text-2xl p-4"></p>
+    </div>
+
+
+
+    
+                                         <!-- CYAN DIV ENDS -->
+
+     
+                                         <!-- HOME Starts -->
+<section class="px-[2rem] py-[3rem] md:px-[3rem] mt-1 md:mt-[1rem]">
+<section class="md:flex md:justify-between mt-[1rem]">    
+        <div class="flex  justify-center items-center md:flex-row md:justify-between md:items-center ">                                                      <!--  gap-3 text-6xl font-bold whitespace-nowrap-->
+          <div class="flex flex-col justify-center ">
+              <div class="mt-8"><p class=" text-[#deae6e] text-2xl "> Our Summer collections</p></div> 
+             <div class="mt-8"><span class="text-6xl font-bold gap-3 whitespace-nowrap">THE NEW <br class="md:hidden"> ARRIVAL<br></span> <span id="element" class=" gap-3 text-[#deae6e] text-6xl font-bold whitespace-nowrap"></span><br  class="md:hidden"><span class=" text-6xl font-bold"> SHOES</span></div>
+             <div class="mt-10"><p class="font-semibold text-xl text-gray-400">Discover stylish Shoes arrivals, quality<br> comfort, and innovation for your<br> active life</p></div>
+             <div class="mt-8"><button  class="gap-2 px-7 py-4 text-lg bg-[#deae6e] text-white font-bold rounded-full"><a  href="#PRODUCTS">Shop now</a></button> </div>
+          
+        
+                                   
+        
+            <div class="flex justify-between flex-wrap md:justify-start md:space-x-5  mt-20 ">
+              <div class="inline-flex flex-col">
+                <p class="text-4xl font-bold text-center">100+ </p>
+                <div class=" border border-b-4 border-black"></div>
+                <p class="font-bold text-gray-300"> BRANDS</p>
+              </div>
+            <div class="inline-flex flex-col ">
+                <p class="text-4xl font-bold text-center">15+ </p>
+                <div class=" border border-b-4 border-black"></div>
+                <p class="font-bold text-gray-300">SHOPS</p>
+            </div>
+            <div class="inline-flex flex-col">
+                <p class="text-4xl font-bold text-center">2k+ </p>
+                <div class=" border border-b-4 border-black"></div>
+                <p class="font-bold text-gray-300"> CUSTOMERS</p>
+            </div>
+          </div>
+        </div>
+
+    
+        </div>
+
+    <div>
+    <div class="relative flex justify-center  items-center mt-16 ">
+            <img class="rounded-3xl" src="assets/images/collection-background.svg" alt="">
+        <div class="absolute  flex  justify-center items-center ">
+          <img id="shoe0" class=" rounded-3xl" src="assets/images/big-shoe1.png" alt=""> 
+          <img id="shoe1" class=" hidden rounded-3xl" src="assets/images/big-shoe1.png" alt=""> 
+          <img id="shoe2" class=" hidden rounded-3xl" src="assets/images/big-shoe2.png" alt=""> 
+          <img id="shoe3" class=" hidden rounded-3xl" src="assets/images/big-shoe3.png" alt=""> 
+        </div> 
+
+    <div class=" absolute bottom-[0.75%] flex justify-between space-x-4">
+        <div class="relative flex justify-center items-center   hover:border-2 hover:border-[#deae6e] rounded-2xl">
+            <img class="h-auto  w-[3.75rem] rounded-2xl" src="assets/images/thumbnail-background.svg" alt="TB">
+          <div id="shoe-icon1" class="absolute  flex  justify-center items-center">
+            <button><a><img src="assets/images/big-shoe1.png" alt="img-1" height="103" width="127" ></a></button>  
+          </div>
+        </div>
+
+        <div class="relative flex justify-center items-center  hover:border-2 hover:border-[#deae6e] rounded-2xl">
+          <img class="h-aut w-[3.75rem] rounded-2xl" src="assets/images/thumbnail-background.svg" alt="TB">
+          <div id="shoe-icon2" class="absolute  flex  justify-center items-center">
+            <button><a><img src="assets/images/big-shoe2.png" alt="img-2" height="103" width="127" ></a></button> 
+          </div>
+        </div>
+
+        <div class="relative flex justify-center items-center  hover:border-2 hover:border-[#deae6e] rounded-2xl  ">
+          <img class="h-auto  w-[3.75rem] rounded-2xl" src="assets/images/thumbnail-background.svg" alt="TB">
+          <div id="shoe-icon3" class="absolute  flex  justify-center items-center">
+            <button><a><img src="assets/images/big-shoe3.png" alt="img-3"height="103" width="127"></a></button> 
+          </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</section>
+</section>
+                                                    <!-- ENDS -->
+
+                                                    <!--ABOUT STARTS-->
+
+<section id="ABOUT-US" class="px-[2rem] md:px-[3rem] py-[3rem] mt-7 md:mt-[2.5rem]">
+<section class="flex flex-col justify-between items-center gap-10 w-full md:flex-row md:justify-between ">
+
+<div class="flex flex-col flex-1  space-y-6">
+  
+    
+    <div><h2 class=" text-4xl lg:max-w-lg font-bold">We Provide <br class="md:hidden"> You <span class=" text-[#deae6e] text-4xl font-bold"> Super </span> <br><span  class=" text-[#deae6e] text-4xl font-bold">Quality</span> Shoes</h2></div>
+    <div><p class="text-xl lg:max-w-lg text-gray-400 font-semibold">Ensuring premium comfort and style, our meticulously crafted footwear is designed to elevate your experience, providing you with unmatched quality, innovation, and a touch of elegance.</p></div>
+    <div><p class="text-xl lg:max-w-lg text-gray-400 font-semibold ">Our dedication to detail and excellence ensures your satisfaction</p></div>
+    <div><button  class=" mt-4 gap-2 px-7 py-4 text-lg bg-[#deae6e] text-white font-bold rounded-full"><a  href="#PRODUCTS">Shop now</a></button> </div>
+</div>   
+
+  <div class="flex flex-col justify-center items-center ">
+    <img class="object-contain" src="assets/images/shoe8.svg"  alt="">
+  </div>
+
+
+  
+
+ 
+
+</section>
+</section>
+                                                           <!-- ENDS -->
+
+                                                           <!--PRODUCTS STARTS-->
+
+<section id="PRODUCTS" class="px-[2rem] py-[3rem] md:px-[3rem] mt-[2.5rem] md:mt-[4rem] justify-around">
+  <section  class="flex flex-col justify-center  gap-10 w-full">
+    <div class=" mt-10">
+      <h2 class="text-4xl font-bold">Our <span class="text-[#deae6e] text-4xl font-bold">Popular</span> Products</h2>
+      <p class="text-xl lg:max-w-lg text-gray-400 font-semibold mt-5">Experience top-notch quality and style with our sought-after selections. Discover a world of comfort, design, and value</p>
+    </div>
+ 
+                                                             <!--1st shoes-->
+    <div class="mt-10 md:flex md:flex-row  md:justify-between lg ">
+      <div class="flex flex-col justify-start space-y-2 mt-7">
+        <div>
+          <img src="assets/images/shoe4.svg" alt="">
+        </div>
+
+        <div class="flex space-x-3 ">
+          <img src="assets/icons/star.svg" alt="">
+          <p class="text-xl lg:max-w-lg text-gray-400 font-semibold">4.5</p>
+        </div>
+
+        <div>
+          <h3 class="text-3xl font-bold">Nike Air Jordan-01</h3>
+        </div>
+
+        <div class="flex flex-row  justify-between md:justify-between mr-[22%] md:mr-[0%] ">
+          <div><span class="text-[#deae6e] font-bold ">$200.20</span></div>
+          <div  id="01cartbtn" ><button  onclick="addItemToCart('01shoe')"   class=" px-1 py-1  text-sm bg-[#deae6e] text-white font-bold rounded-2xl ">Add To Cart</button></div> 
+        </div>
+      </div>
+
+                                                             <!--2nd shoes-->
+      <div class="flex flex-col justify-start space-y-2 mt-7">
+        <div>
+          <img src="assets/images/shoe5.svg" alt="">
+        </div>
+
+        <div class="flex space-x-3 ">
+          <img src="assets/icons/star.svg" alt="">
+          <p class="text-xl lg:max-w-lg text-gray-400 font-semibold">4.5</p>
+        </div>
+
+        <div>
+          <h3 class="text-3xl font-bold">Nike Air Jordan-10</h3>
+        </div>
+
+        <div class="flex flex-row  justify-between md:justify-between mr-[22%] md:mr-[0%] ">
+          <div><span class="text-[#deae6e] font-bold ">$210.20</span></div>
+          <div  id="10cartbtn" ><button  onclick="addItemToCart('10shoe')"   class=" px-1 py-1  text-sm bg-[#deae6e] text-white font-bold rounded-2xl ">Add To Cart</button></div> 
+        </div>
+
+      </div>
+                                                               <!--3rd shoes-->
+
+      <div class="flex flex-col justify-start space-y-2 mt-7">
+        <div>
+          <img src="assets/images/shoe6.svg" alt="">
+        </div>
+
+        <div class="flex space-x-3 ">
+          <img src="assets/icons/star.svg" alt="">
+          <p class="text-xl lg:max-w-lg text-gray-400 font-semibold">4.5</p>
+        </div>
+
+        <div>
+          <h3 class="text-3xl font-bold">Nike Air Jordan-100</h3>
+        </div>
+
+        <div class="flex flex-row  justify-between md:justify-between mr-[22%] md:mr-[0%] ">
+          <div><span class="text-[#deae6e] font-bold ">$220.20</span></div>
+          <div  id="100cartbtn" ><button  onclick="addItemToCart('100shoe')"   class=" px-1 py-1  text-sm bg-[#deae6e] text-white font-bold rounded-2xl ">Add To Cart</button></div> 
+        </div>
+
+        
+      </div>
+                                                             <!--4th shoes-->
+      <div class="flex flex-col justify-start space-y-2 mt-7">
+        <div>
+          <img src="assets/images/shoe7.svg" alt="">
+        </div>
+
+        <div class="flex space-x-3 ">
+          <img src="assets/icons/star.svg" alt="">
+          <p class="text-xl lg:max-w-lg text-gray-400 font-semibold">4.5</p>
+        </div>
+
+        <div>
+          <h3 class="text-3xl font-bold">Nike Air Jordan-200</h3>
+        </div>
+
+        <div class="flex flex-row  justify-between md:justify-between mr-[22%] md:mr-[0%] ">
+          <div><span class="text-[#deae6e] font-bold ">$230.20</span></div>
+          <div  id="200cartbtn" ><button  onclick="addItemToCart('200shoe')"   class=" px-1 py-1  text-sm bg-[#deae6e] text-white font-bold rounded-2xl ">Add To Cart</button></div> 
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+</section>
+                                                           <!-- ENDS -->
+
+                                                           <!--STARTS-->
+<section class="px-[2rem] py-[3rem] md:px-[3rem] mt-[2.5rem]">
+<section class="flex-1 md:flex md:flex-row md:flex-1 md:justify-between flex flex-col  justify-between   ">
+  <div>
+    <div class="flex flex-col justify-center rounded-3xl shadow-2xl px-10 py-16 ">
+      <div class=" bg-[#deae6e] w-11 h-11 flex justify-center items-center  rounded-full">
+        <img src="assets/icons/truck-fast.svg" alt="">
+      </div>
+      <div class="mt-5"><h3 class="font-bold text-3xl">Free shipping</h3></div>
+      <div class="mt-5"><p class="text-lg max-w-sm  text-gray-400 font-semibold ">Enjoy seamless shopping with our complimentary shipping service.</p></div>
+    </div>
+  </div>
+
+  <div class=" mt-20 md:mt-0">
+    <div class="flex flex-col justify-center rounded-3xl shadow-2xl px-10 py-16  ">
+      <div class=" bg-[#deae6e] w-11 h-11 flex justify-center items-center  rounded-full">
+        <img src="assets/icons/shield-tick.svg" alt="">
+      </div>
+      <div class="mt-5"><h3 class="font-bold text-3xl">Secure Payment</h3></div>
+      <div class="mt-5"><p class="text-lg max-w-sm  text-gray-400 font-semibold ">Experience worry-free transactions with our secure payment options.</p></div>
+    </div>
+  </div>
+
+  <div class="mt-20 md:mt-0">
+    <div class="flex flex-col justify-center rounded-3xl shadow-2xl px-10 py-16  ">
+      <div class=" bg-[#deae6e] w-11 h-11 flex justify-center items-center  rounded-full">
+        <img src="assets/icons/support.svg" alt="">
+      </div>
+      <div class="mt-5"><h3 class="font-bold text-3xl">Love to help you</h3></div>
+      <div class="mt-5"><p class="text-lg max-w-sm  text-gray-400 font-semibold ">Our dedicated team is here to assist you every step of the way.</p></div>
+    </div>
+  </div>
+</section>
+</section>
+                                                         <!-- ENDS -->
+
+
+<section class="px-[2rem] py-[3rem] mt-[2.5rem] bg-[#f5f6ff]">
+  <section class="flex-1 flex flex-col  justify-center items-center  flex-wrap">
+    <div>
+      <div><h3 class="text-4xl font-bold"><span class="text-[#deae6e] font-bold text-4xl"> Customers'</span> Feedback</h3></div>
+      <div><p class=" mt-5 text-lg max-w-sm  text-gray-400 font-semibold ">Hear genuine stories from our satisfied customers about their exceptional experiences with us.</p></div>
+    </div>
+
+   <div class="md:flex md:flex-row md:justify-between md:space-x-[5rem] my-5   ">
+    <div class=" flex flex-col justify-center items-center mt-[1rem] shadow-2xl rounded-3xl bg-white">
+        <div class="rounded-full overflow-hidden object-cover w-[120px] h-[120px]">
+          <img src="assets/images/final-1.png" alt="C1">
+        </div>
+
+        <div><p class=" mt-3 text-lg md:max-w-sm text-center text-gray-400 font-semibold ">The attention to detail and the quality of the product exceeded my expectations. Highly recommended!</p></div>
+
+        <div class=" mt-3 flex flex-row">
+          <img src="assets/icons/star.svg" alt="">
+          <p class=" text-lg max-w-sm  text-gray-400 ">4.5</p>
+        </div>
+        <div>
+          <h3 class=" mt-3 font-bold text-3xl">Customer X </h3>
+        </div>
+
+    </div>
+    
+
+    
+    <div class=" flex flex-col justify-center items-center mt-[1rem] shadow-2xl rounded-3xl  bg-white">
+      <div class="rounded-full overflow-hidden object-cover w-[120px] h-[120px]">
+        <img src="assets/images/circle-photo.jpg" alt="C2">
+      </div>
+
+      <div><p class=" mt-3 text-lg md:max-w-sm text-center text-gray-400 font-semibold ">The product not only met but exceeded my expectations. I'll definitely be a returning customer!</p></div>
+
+      <div class=" mt-3 flex flex-row">
+        <img src="assets/icons/star.svg" alt="">
+        <p class=" text-lg max-w-sm  text-gray-400 ">4.5</p>
+      </div>
+      <div>
+        <h3 class=" mt-3 font-bold text-3xl">Customer Y</h3>
+      </div>
+
+  </div>
+  </div>
+</section>
+</section>
+                                                         <!-- FOOTER -->
+
+
+<footer id="Footer" class="pb-[2rem] pt-[3rem] px-[2rem] bg-black ">
+  <section>
+  <div class=" flex flex-col justify-between md:flex md:flex-row md:justify-between md:items-start">
+
+
+  <div class="flex flex-col items-start">
+    <div class="flex justify-center items-center space-x-3">
+        <img class= "flex justify-center items-center w-10 h-10 bg-white rounded-full" src="assets/images/ata-removebg-preview.png" width="50" height="46" alt="">
+        <p class="text-white font-bold max-w-sm text-3xl ">SHOENIQUE</p>
+    </div>
+
+    <div class="mt-7">
+      <p class="text-white max-w-lg text-lg">Get shoes ready for the new term at your nearest Shoenique store. Find Your perfect Size In Store.</p>
+    </div>
+
+    <div class="mt-5 flex flex-row space-x-4 ">
+      <div class=" flex justify-center items-center w-12 h-12 bg-white rounded-full">
+        <a href=""><img src="assets/icons/facebook.svg" width="24" height="24" alt=""></a>
+      </div>
+
+      <div class=" flex justify-center items-center w-12 h-12 bg-white rounded-full">
+        <a href=""><img src="assets/icons/twitter.svg" width="24" height="24" alt=""></a>
+      </div>
+
+      <div class=" flex justify-center items-center w-12 h-12 bg-white rounded-full">
+       <a href=""><img src="assets/icons/instagram.svg" width="24" height="24" alt=""></a>
+      </div>
+    </div>
+    </div>
+
+
+
+    <div class="flex flex-col  space-y-4 mt-[2.5rem] md:mt-0 ">
+      <div>
+         <h3 class="text-white font-bold text-3xl">Products</h3>
+      </div>
+
+      <div>
+       <p class="text-white max-w-sm text-lg">Air Force 1</p>
+      </div>
+
+      <div>
+        <p class="text-white max-w-sm text-lg">Air Max</p>
+      </div>
+
+      <div>
+        <p class="text-white max-w-sm text-lg">Air Jordan</p>
+      </div>
+
+      <div>
+        <p class="text-white max-w-sm text-lg">Nike Waffle Racer</p>
+      </div>
+      <div>
+        <p class="text-white max-w-sm text-lg">Nike Cortez</p>
+       </div>
+    </div>
+
+    
+    <div class="flex flex-col space-y-4 mt-[2.5rem] md:mt-0 ">
+      <div>
+         <h3 class="text-white font-bold text-3xl">Help</h3>
+      </div>
+
+      <div>
+       <p class="text-white max-w-sm text-lg">About US</p>
+      </div>
+
+      <div>
+        <p class="text-white max-w-sm text-lg">FAQs</p>
+      </div>
+
+      <div>
+        <p class="text-white max-w-sm text-lg">Privacy Policy</p>
+      </div>
+
+    </div>
+  
+    <div class="flex flex-col space-y-4 mt-[2.5rem] md:mt-0">
+      <div>
+         <h3 class="text-white font-bold text-3xl">Get in touch</h3>
+      </div>
+
+      <div>
+       <p class="text-white max-w-sm text-lg">customer@shoenique.com</p>
+      </div>
+
+      <div>
+      <a href="#"><p class="text-white max-w-sm text-lg">+92xx-xxxxxxx</p></a> 
+      </div>
+
+      
+    </div>
+  </div>
+
+    <div class="flex flex-col justify-center items-center md:flex md:flex-row md:justify-between mt-[2rem]">
+      <div class="flex space-x-2 justify-start items-center ">
+        <img src="assets/icons/copyright-sign.svg" alt="CS">
+        <a href=""><p class="text-white font-bold text-lg">Copyright. All rights reserved.</p></a>
+      </div>
+
+      <div class="mt-3 md:mt-0">
+        <a href=""><p class="text-white text-lg">Terms & Conditions</p></a>
+      </div>
+    </div>
+        
+</section>
+</footer>
+<script src="./JS/script.js"></script>
+
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+  <!-- Setup and start animation! -->
+<script>
+  var typed = new Typed('#element', {
+    strings: ['\nTRENDING',
+     '\nPREMIUM',
+     '\nLUXURY',],
+    typeSpeed: 200,
+    backspeed:200,
+    startDelay : '100',
+    loop:true,
+    loopCount : '2',
+    showCursor :'false'
+  });
+
+  var typed2 = new Typed('#cyandiv1', {
+    strings: [
+    'STEP INTO THE NEW YEAR WITH SHOENIQUE',
+    'ENJOY 25% OFF ON OUR TRENDY SHOE COLLECTION',
+    'USE CODE WINTER SALE!'
+  ],
+    typeSpeed: 100,
+    backspeed:100,
+    startDelay : '100',
+    loop:true,
+    loopCount : '2',
+    showCursor :'false'
+  });
+
+  
+</script>
+</body>
+</html> .
